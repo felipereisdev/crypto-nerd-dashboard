@@ -132,6 +132,54 @@
     font-size: 1rem;
   }
   
+  /* Grid para os cards no modo landscape - 2 colunas */
+  .landscape-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Ajustes específicos para os cards em layout de 2 colunas */
+  .landscape-card-grid .card-content {
+    padding: 0.4rem 0.5rem !important;
+  }
+  
+  /* Reduzir ainda mais os ícones no layout de 2 colunas */
+  .landscape-card-grid .card-content img.rounded-full,
+  .landscape-card-grid .card-content .w-10,
+  .landscape-card-grid .card-content .h-10 {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+  }
+  
+  /* Tornar os preços e textos mais compactos no layout de 2 colunas */
+  .landscape-card-grid .card-content .text-lg {
+    font-size: 0.9rem;
+  }
+  
+  .landscape-card-grid .card-content .text-xs {
+    font-size: 0.7rem;
+  }
+
+  /* Ajustar botões e ícones */
+  .landscape-card-grid .card-content button {
+    padding: 0.25rem;
+  }
+  
+  .landscape-card-grid .card-content .h-4.w-4,
+  .landscape-card-grid .card-content .h-5.w-5 {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  
+  /* Reduzir espaço entre elementos */
+  .landscape-card-grid .card-content .justify-between > * {
+    margin-right: 0.25rem;
+  }
+  
+  .landscape-card-grid .card-content .justify-between > *:last-child {
+    margin-right: 0;
+  }
+
   /* Ajuste o layout para aproveitar melhor o espaço horizontal */
   @media (max-width: 768px) {
     .grid {

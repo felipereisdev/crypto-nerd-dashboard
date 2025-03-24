@@ -686,7 +686,7 @@ export default function CryptoDashboard() {
               </div>
             ) : (
               <ScrollArea className="h-[calc(100vh-200px)]">
-                <div className="grid gap-4">
+                <div className="grid gap-4 landscape-card-grid">
                   {favorites.map((coin) => (
                     <Card key={coin.id} className="bg-gray-900 border-gray-800 overflow-hidden">
                       <CardContent className="p-4 card-content">
@@ -774,7 +774,7 @@ export default function CryptoDashboard() {
           </div>
 
           <ScrollArea className="h-[calc(100vh-250px)]">
-            <div className="grid gap-4">
+            <div className="grid gap-4 landscape-card-grid">
               {isSearching ? (
                 Array(3)
                   .fill(0)
