@@ -379,33 +379,197 @@ body.tv-mode svg.tv-chart polyline {
 /* Container específico para TV */
 .tv-container {
   max-width: 100%;
-  padding: 2rem !important;
+  padding: 1.5rem !important;
+  background-color: #000000 !important;
 }
 
 .tv-container .landscape-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .tv-container h1 {
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
+  color: #10b981 !important;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
 
-/* Aumentar significativamente o tamanho dos cards para TV */
+/* Melhorar a visibilidade dos cards em TV */
 .tv-container .card-content {
-  padding: 2rem !important;
+  padding: 1.25rem !important;
 }
 
 .tv-container .card-content .w-10,
 .tv-container .card-content .h-10 {
-  width: 4rem !important;
-  height: 4rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
 }
 
 .tv-container .card-content .text-lg {
-  font-size: 2.25rem !important;
+  font-size: 2rem !important;
+  text-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
 }
 
 .tv-container .card-content .text-xs {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
+}
+
+/* Melhorar contraste e visibilidade dos elementos de cabeçalho */
+.tv-container .landscape-time, 
+.tv-container .landscape-btc {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+  border: 1px solid #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Melhoria nos cards */
+.tv-container .bg-gray-900 {
+  background-color: rgba(17, 24, 39, 0.9) !important;
+  border: 1px solid #2d3748 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Melhorar contraste e visibilidade do texto */
+.tv-container .text-green-400 {
+  color: #10b981 !important;
+  text-shadow: 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.tv-container .text-green-500 {
+  color: #10b981 !important;
+  text-shadow: 0 0 4px rgba(16, 185, 129, 0.4);
+}
+
+.tv-container .text-red-500 {
+  color: #ef4444 !important;
+  text-shadow: 0 0 4px rgba(239, 68, 68, 0.4);
+}
+
+/* Melhorar a visibilidade dos ícones da moeda */
+.tv-container img.rounded-full {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Botões mais visiveis */
+.tv-container button {
+  min-height: 2.5rem !important;
+  min-width: 2.5rem !important;
+  transform: scale(1.2);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  background-color: rgba(17, 24, 39, 0.7) !important;
+}
+
+.tv-container button:hover {
+  background-color: rgba(17, 24, 39, 0.9) !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Botão de atualizar */
+.tv-container button .h-4.w-4 {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+
+/* Botão de busca */
+.tv-container .bg-green-700 {
+  background-color: #059669 !important;
+  box-shadow: 0 0 10px rgba(5, 150, 105, 0.5);
+}
+
+/* Grid de 1 coluna para visualização em TV */
+.tv-container .grid-cols-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0.75rem;
+}
+
+/* Aumentar espaço entre elementos nos cards */
+.tv-container .gap-3 {
+  gap: 1rem !important;
+}
+
+.tv-container .card-content {
+  padding: 1.25rem !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Adicionar espaço entre os elementos de texto */
+.tv-container .text-xs,
+.tv-container .text-sm,
+.tv-container .text-lg {
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Ajustes para o grid de 1 coluna em TV */
+.tv-container .grid-cols-1 .card-content {
+  padding: 1.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tv-container .grid-cols-1 .card-content .w-10,
+.tv-container .grid-cols-1 .card-content .h-10 {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+
+.tv-container .grid-cols-1 .card-content .text-lg {
+  font-size: 2.25rem !important;
+  font-weight: bold;
+}
+
+.tv-container .grid-cols-1 .card-content .text-xs {
+  font-size: 1.15rem !important;
+}
+
+/* Aumentar tamanho do gráfico para visualização em uma coluna */
+.tv-container .grid-cols-1 svg.tv-chart {
+  width: 180px !important;
+  height: 60px !important;
+}
+
+.tv-container .grid-cols-1 svg.tv-chart polyline {
+  stroke-width: 3.5 !important;
+}
+
+/* Grid de 2 colunas para visualização em TV */
+.tv-container .grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 0.75rem;
+}
+
+/* Ajustes para o grid de 2 colunas em TV */
+.tv-container .grid-cols-2 .card-content {
+  padding: 1.25rem !important;
+}
+
+.tv-container .grid-cols-2 .card-content .w-10,
+.tv-container .grid-cols-2 .card-content .h-10 {
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+}
+
+.tv-container .grid-cols-2 .card-content .text-lg {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+
+.tv-container .grid-cols-2 .card-content .text-xs {
+  font-size: 0.9rem !important;
+}
+
+/* Diminuir o tamanho do gráfico para caber no layout de 2 colunas */
+.tv-container .grid-cols-2 svg.tv-chart {
+  width: 120px !important;
+  height: 40px !important;
+}
+
+.tv-container .grid-cols-2 svg.tv-chart polyline {
+  stroke-width: 3 !important;
 }
 

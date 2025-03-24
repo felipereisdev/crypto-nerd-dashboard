@@ -624,13 +624,16 @@ export default function CryptoDashboard() {
     
     const isPositive = priceChange >= 0
     const color = isPositive ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"
+    const width = isTVMode ? 140 : 100
+    const height = isTVMode ? 40 : 30
+    const strokeWidth = isTVMode ? 3 : 2
 
     // Generate some fake chart data that trends up or down based on price change
     const generatePoints = () => {
       const points = []
       const pointCount = 20
-      const height = 30
-      const width = 100
+      const height = isTVMode ? 40 : 30
+      const width = isTVMode ? 140 : 100
 
       const trend = isPositive ? -1 : 1 // Start low for positive, high for negative
 
@@ -646,8 +649,8 @@ export default function CryptoDashboard() {
     }
 
     return (
-      <svg width="100" height="30" viewBox="0 0 100 30" className="ml-2 tv-chart">
-        <polyline points={generatePoints()} fill="none" stroke={color} strokeWidth="2" />
+      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="ml-2 tv-chart">
+        <polyline points={generatePoints()} fill="none" stroke={color} strokeWidth={strokeWidth} />
       </svg>
     )
   }
@@ -717,8 +720,8 @@ export default function CryptoDashboard() {
                 <p className="text-gray-500 text-sm mt-2">Go to the Favorites tab to add cryptocurrencies.</p>
               </div>
             ) : (
-              <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-300px)]' : 'h-[calc(100vh-200px)]'}`}>
-                <div className="grid gap-4 landscape-card-grid">
+              <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-250px)]' : 'h-[calc(100vh-200px)]'}`}>
+                <div className={`grid gap-4 ${isTVMode ? 'grid-cols-2' : 'landscape-card-grid'}`}>
                   {favorites.map((coin) => (
                     <Card key={coin.id} className="bg-gray-900 border-gray-800 overflow-hidden">
                       <CardContent className="p-4 card-content">
@@ -805,8 +808,8 @@ export default function CryptoDashboard() {
             </Button>
           </div>
 
-          <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-350px)]' : 'h-[calc(100vh-250px)]'}`}>
-            <div className="grid gap-4 landscape-card-grid">
+          <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-330px)]' : 'h-[calc(100vh-250px)]'}`}>
+            <div className={`grid gap-4 ${isTVMode ? 'grid-cols-2' : 'landscape-card-grid'}`}>
               {isSearching ? (
                 Array(3)
                   .fill(0)
