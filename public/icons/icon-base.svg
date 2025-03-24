@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000" rx="128" />
+  
+  <!-- Fundo gradiente verde -->
+  <linearGradient id="cryptoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#10b981" />
+    <stop offset="100%" stop-color="#047857" />
+  </linearGradient>
+  
+  <circle cx="256" cy="256" r="200" fill="url(#cryptoGradient)" />
+  
+  <!-- Símbolo de criptomoeda -->
+  <g fill="#000000" transform="translate(156, 156) scale(0.8)">
+    <path d="M128 0C57.37 0 0 57.37 0 128s57.37 128 128 128 128-57.37 128-128S198.63 0 128 0zm0 240c-61.86 0-112-50.14-112-112S66.14 16 128 16s112 50.14 112 112-50.14 112-112 112z"/>
+    <path d="M176 116v-20c0-8.84-7.16-16-16-16h-48V48h-16v32H72v16h80c4.42 0 8 3.58 8 8v20c0 4.42-3.58 8-8 8H72c-8.84 0-16 7.16-16 16v20c0 8.84 7.16 16 16 16h24v32h16v-32h24v-16H72c-4.42 0-8-3.58-8-8v-20c0-4.42 3.58-8 8-8h80c8.84 0 16-7.16 16-16z"/>
+  </g>
+  
+  <!-- Linhas de dados -->
+  <g stroke="#ffffff" stroke-width="3" opacity="0.4">
+    <line x1="106" y1="356" x2="406" y2="356" />
+    <line x1="106" y1="386" x2="356" y2="386" />
+    <line x1="106" y1="416" x2="296" y2="416" />
+  </g>
+</svg> 
