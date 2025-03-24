@@ -573,3 +573,74 @@ body.tv-mode svg.tv-chart polyline {
   stroke-width: 3 !important;
 }
 
+/* Corrigir layout das abas */
+[data-orientation="horizontal"] {
+  width: 100%;
+}
+
+[data-orientation="horizontal"] [role="tablist"] {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Ajustes adicionais para notebooks - garantir que o layout seja igual ao da TV */
+@media (min-width: 768px) {
+  .grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  .gap-4 {
+    gap: 1rem !important;
+  }
+  
+  .card-content {
+    padding: 1rem !important;
+  }
+  
+  /* Garantir espaço adequado entre elementos dentro dos cards */
+  .card-content .justify-between {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .card-content .w-10,
+  .card-content .h-10 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .card-content .text-lg {
+    font-size: 1.25rem !important;
+  }
+  
+  .card-content .text-xs {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Melhor visualização dos gráficos em notebooks */
+  svg.tv-chart {
+    width: 110px !important;
+    height: 35px !important;
+  }
+  
+  svg.tv-chart polyline {
+    stroke-width: 2.5 !important;
+  }
+  
+  /* Melhorar botões em notebooks para consistência */
+  button {
+    min-height: 2rem !important;
+    min-width: 2rem !important;
+  }
+  
+  /* Melhorar contraste dos cards para notebooks */
+  .bg-gray-900 {
+    background-color: rgba(17, 24, 39, 0.9) !important;
+    border: 1px solid #2d3748;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+

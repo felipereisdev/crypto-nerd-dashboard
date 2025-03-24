@@ -721,7 +721,7 @@ export default function CryptoDashboard() {
               </div>
             ) : (
               <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-250px)]' : 'h-[calc(100vh-200px)]'}`}>
-                <div className={`grid gap-4 ${isTVMode ? 'grid-cols-2' : 'landscape-card-grid'}`}>
+                <div className="grid grid-cols-2 gap-4">
                   {favorites.map((coin) => (
                     <Card key={coin.id} className="bg-gray-900 border-gray-800 overflow-hidden">
                       <CardContent className="p-4 card-content">
@@ -809,7 +809,7 @@ export default function CryptoDashboard() {
           </div>
 
           <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-330px)]' : 'h-[calc(100vh-250px)]'}`}>
-            <div className={`grid gap-4 ${isTVMode ? 'grid-cols-2' : 'landscape-card-grid'}`}>
+            <div className="grid grid-cols-2 gap-4">
               {isSearching ? (
                 Array(3)
                   .fill(0)
