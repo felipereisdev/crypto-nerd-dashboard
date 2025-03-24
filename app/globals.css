@@ -193,3 +193,219 @@
   }
 }
 
+/* Estilo específico quando a classe tv-mode é aplicada (detectada automaticamente) */
+body.tv-mode {
+  font-size: 20px;
+}
+
+body.tv-mode h1.text-2xl {
+  font-size: 2.5rem;
+}
+
+body.tv-mode .w-4,
+body.tv-mode .h-4 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+body.tv-mode .w-5,
+body.tv-mode .h-5 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+body.tv-mode .w-10,
+body.tv-mode .h-10 {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+body.tv-mode .p-4 {
+  padding: 1.5rem;
+}
+
+body.tv-mode .card-content {
+  padding: 1.5rem;
+}
+
+body.tv-mode .text-xs {
+  font-size: 1rem;
+}
+
+body.tv-mode .text-lg {
+  font-size: 1.75rem;
+}
+
+body.tv-mode .gap-4 {
+  gap: 1.5rem;
+}
+
+body.tv-mode button {
+  min-height: 3rem;
+  min-width: 3rem;
+}
+
+body.tv-mode .landscape-card-grid {
+  grid-template-columns: 1fr;
+}
+
+body.tv-mode svg.tv-chart {
+  width: 200px;
+  height: 60px;
+}
+
+body.tv-mode svg.tv-chart polyline {
+  stroke-width: 3;
+}
+
+/* Ajustes específicos para Smart TVs */
+@media (min-width: 1280px) and (min-height: 720px) {
+  /* Aumentar tamanho base de fontes */
+  html {
+    font-size: 20px;
+  }
+  
+  /* Ajustes de cabeçalho para TV */
+  h1.text-2xl {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Aumentar o tamanho dos ícones */
+  .w-4, .h-4 {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  
+  .w-5, .h-5 {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+  
+  .w-10, .h-10 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  
+  /* Aumentar padding para dar mais espaço */
+  .p-4 {
+    padding: 1.25rem !important;
+  }
+  
+  .px-3 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-2 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  
+  /* Melhorar tamanho dos cards */
+  .card-content {
+    padding: 1.5rem !important;
+  }
+  
+  /* Aumentar tamanho dos textos */
+  .text-xs {
+    font-size: 1rem !important;
+  }
+  
+  .text-sm {
+    font-size: 1.15rem !important;
+  }
+  
+  .text-lg {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Aumentar espaçamento entre cards */
+  .gap-3 {
+    gap: 1rem !important;
+  }
+  
+  .gap-4 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Melhorar o espaçamento na visualização dos cards */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Garantir uma área de rolagem suficiente */
+  .h-\[calc\(100vh-200px\)\] {
+    height: calc(100vh - 250px) !important;
+  }
+  
+  .h-\[calc\(100vh-250px\)\] {
+    height: calc(100vh - 300px) !important;
+  }
+  
+  /* Manter o gráfico legível */
+  svg {
+    width: 200px !important;
+    height: 60px !important;
+  }
+  
+  /* Ajustar o layout de cards para TV */
+  .landscape-card-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ajustar botões para facilitar o clique */
+  button {
+    min-height: 3rem !important;
+    min-width: 3rem !important;
+  }
+  
+  button.h-6, button.w-6 {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+  }
+  
+  /* Tornar os gráficos mais espessos e visíveis */
+  svg.tv-chart polyline {
+    stroke-width: 3 !important;
+  }
+  
+  /* Alinhamento vertical dos conteúdos dos cards */
+  .card-content .items-center {
+    align-items: center !important;
+  }
+}
+
+/* Container específico para TV */
+.tv-container {
+  max-width: 100%;
+  padding: 2rem !important;
+}
+
+.tv-container .landscape-header {
+  margin-bottom: 2rem;
+}
+
+.tv-container h1 {
+  font-size: 3rem !important;
+}
+
+/* Aumentar significativamente o tamanho dos cards para TV */
+.tv-container .card-content {
+  padding: 2rem !important;
+}
+
+.tv-container .card-content .w-10,
+.tv-container .card-content .h-10 {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.tv-container .card-content .text-lg {
+  font-size: 2.25rem !important;
+}
+
+.tv-container .card-content .text-xs {
+  font-size: 1.25rem !important;
+}
+

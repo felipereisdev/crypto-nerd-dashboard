@@ -88,6 +88,7 @@ export default function CryptoDashboard() {
   const [allCoins, setAllCoins] = useState<Coin[]>([])
   const [isMounted, setIsMounted] = useState(false)
   const [isOnline, setIsOnline] = useState(true)
+  const [isTVMode, setIsTVMode] = useState(false)
   
   // Use refs to prevent infinite loops and ensure we only make updates when appropriate
   const favoritesRef = React.useRef<Coin[]>([])
@@ -102,6 +103,37 @@ export default function CryptoDashboard() {
   useEffect(() => {
     setIsMounted(true)
     setCurrentTime(new Date())
+    
+    // Detectar se está sendo exibido em uma TV
+    const detectTV = () => {
+      // Smart TVs geralmente têm telas grandes e user agents específicos
+      const isTV = 
+        window.innerWidth >= 1280 && 
+        window.innerHeight >= 720 &&
+        (navigator.userAgent.includes('TV') || 
+         navigator.userAgent.includes('SmartTV') || 
+         navigator.userAgent.includes('WebOS') ||
+         navigator.userAgent.includes('Tizen') ||
+         document.documentElement.clientWidth >= 1280);
+      
+      if (isTV) {
+        document.body.classList.add('tv-mode');
+        setIsTVMode(true);
+      } else {
+        document.body.classList.remove('tv-mode');
+        setIsTVMode(false);
+      }
+    };
+    
+    // Verificar na carga inicial
+    detectTV();
+    
+    // Adicionar listener para redimensionamento
+    window.addEventListener('resize', detectTV);
+    
+    return () => {
+      window.removeEventListener('resize', detectTV);
+    };
   }, [])
 
   // Update clock every second - only after mounting
@@ -299,7 +331,7 @@ export default function CryptoDashboard() {
     fetchAllCoins()
   }, [isMounted])
 
-  // Auto-refresh prices every 60 seconds (1 minute)
+  // Auto-refresh prices every 15 minutes
   useEffect(() => {
     // Only run on client and when component is mounted
     if (!isMounted) return;
@@ -367,7 +399,7 @@ export default function CryptoDashboard() {
 
     // Run the first update immediately
     if (favorites.length > 0) {
-      console.log(`[${new Date().toLocaleTimeString()}] Setting up auto-update interval (60 seconds)`);
+      console.log(`[${new Date().toLocaleTimeString()}] Setting up auto-update interval (15 minutes)`);
       updatePrices();
     }
     
@@ -375,7 +407,7 @@ export default function CryptoDashboard() {
     const interval = setInterval(() => {
       console.log(`[${new Date().toLocaleTimeString()}] Interval triggered`);
       updatePrices();
-    }, 60000); // Update every 60 seconds (1 minute)
+    }, 900000); // Update every 15 minutes
 
     return () => {
       console.log(`[${new Date().toLocaleTimeString()}] Clearing auto-update interval`);
@@ -614,14 +646,14 @@ export default function CryptoDashboard() {
     }
 
     return (
-      <svg width="100" height="30" viewBox="0 0 100 30" className="ml-2">
+      <svg width="100" height="30" viewBox="0 0 100 30" className="ml-2 tv-chart">
         <polyline points={generatePoints()} fill="none" stroke={color} strokeWidth="2" />
       </svg>
     )
   }
 
   return (
-    <div className="min-h-screen bg-black text-green-400 p-4 font-mono landscape-container">
+    <div className={`min-h-screen bg-black text-green-400 p-4 font-mono landscape-container ${isTVMode ? 'tv-container' : ''}`}>
       <header className="mb-6 landscape-header">
         <div className="flex justify-between items-center mb-2">
           <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg landscape-time">
@@ -685,7 +717,7 @@ export default function CryptoDashboard() {
                 <p className="text-gray-500 text-sm mt-2">Go to the Favorites tab to add cryptocurrencies.</p>
               </div>
             ) : (
-              <ScrollArea className="h-[calc(100vh-200px)]">
+              <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-300px)]' : 'h-[calc(100vh-200px)]'}`}>
                 <div className="grid gap-4 landscape-card-grid">
                   {favorites.map((coin) => (
                     <Card key={coin.id} className="bg-gray-900 border-gray-800 overflow-hidden">
@@ -773,7 +805,7 @@ export default function CryptoDashboard() {
             </Button>
           </div>
 
-          <ScrollArea className="h-[calc(100vh-250px)]">
+          <ScrollArea className={`${isTVMode ? 'h-[calc(100vh-350px)]' : 'h-[calc(100vh-250px)]'}`}>
             <div className="grid gap-4 landscape-card-grid">
               {isSearching ? (
                 Array(3)
