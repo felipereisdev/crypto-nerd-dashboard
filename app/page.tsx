@@ -621,7 +621,7 @@ export default function CryptoDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-green-400 p-4 font-mono">
+    <div className="min-h-screen bg-black text-green-400 p-4 font-mono landscape-container">
       <header className="mb-6">
         <div className="flex justify-between items-center mb-2">
           <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg">

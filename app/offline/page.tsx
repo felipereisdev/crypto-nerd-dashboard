@@ -21,7 +21,7 @@ export default function OfflinePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-green-400 p-4 font-mono">
+    <div className="min-h-screen bg-black text-green-400 p-4 font-mono landscape-container">
       <header className="mb-6">
         <div className="flex justify-center items-center mb-6">
           <h1 className="text-2xl font-bold text-center">CryptoNerd Dashboard</h1>
