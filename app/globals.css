@@ -582,6 +582,14 @@ body.tv-mode svg.tv-chart polyline {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Remover regras potencialmente conflitantes */
+[data-orientation="horizontal"] [role="tab"] {
+  height: auto;
+  padding: 0.75rem;
 }
 
 /* Ajustes adicionais para notebooks - garantir que o layout seja igual ao da TV */
@@ -642,5 +650,69 @@ body.tv-mode svg.tv-chart polyline {
     border: 1px solid #2d3748;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   }
+}
+
+/* Melhorar o container das tabs */
+[role="tablist"] {
+  height: auto !important; 
+  min-height: 3rem;
+  border: 1px solid #2d3748 !important;
+}
+
+/* Corrigir alinhamento do texto nas tabs */
+[role="tab"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  line-height: 1.2 !important;
+  padding: 0.75rem !important;
+  height: auto !important;
+  min-height: 3rem !important;
+}
+
+/* Garantir que o texto da aba ativa tenha maior visibilidade */
+[role="tab"][data-state="active"] {
+  font-weight: bold !important;
+  position: relative !important;
+  z-index: 1 !important; 
+}
+
+/* Ajustes para TV */
+.tv-container [role="tablist"] {
+  min-height: 4rem !important;
+}
+
+.tv-container [role="tab"] {
+  min-height: 4rem !important;
+  font-size: 1.5rem !important;
+}
+
+/* Estilo específico para os botões das tabs */
+.tab-button {
+  background-color: rgba(17, 24, 39, 0.8);
+  color: #64748b;
+  transition: all 0.2s ease;
+  border: none;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500;
+  position: relative;
+}
+
+.tab-button[data-state="active"] {
+  background-color: rgba(17, 24, 39, 1);
+  color: #10b981;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+}
+
+/* Ajustes para botões em TVs */
+.tv-container .tab-button {
+  padding: 1rem !important;
+  font-size: 1.5rem;
+  min-height: 4rem;
 }
 

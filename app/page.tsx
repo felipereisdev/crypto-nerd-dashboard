@@ -702,17 +702,23 @@ export default function CryptoDashboard() {
         </div>
       </header>
 
-      <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="grid grid-cols-2 w-full bg-gray-900 mb-4">
-          <TabsTrigger value="dashboard" className="data-[state=active]:bg-gray-800 data-[state=active]:text-green-400">
+      <Tabs defaultValue="dashboard" className="w-full mt-2">
+        <TabsList className="grid grid-cols-2 w-full">
+          <TabsTrigger 
+            value="dashboard" 
+            className="tab-button"
+          >
             Dashboard
           </TabsTrigger>
-          <TabsTrigger value="favorites" className="data-[state=active]:bg-gray-800 data-[state=active]:text-green-400">
+          <TabsTrigger 
+            value="favorites" 
+            className="tab-button"
+          >
             Favorites
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="dashboard" className="mt-0">
+        <TabsContent value="dashboard" className="mt-4">
           <div className="grid gap-4">
             {favorites.length === 0 ? (
               <div className="text-center py-10 border border-dashed border-gray-700 rounded-lg">
@@ -787,7 +793,7 @@ export default function CryptoDashboard() {
           </div>
         </TabsContent>
 
-        <TabsContent value="favorites" className="mt-0">
+        <TabsContent value="favorites" className="mt-4">
           <div className="flex items-center space-x-2 mb-4">
             <div className="relative flex-1">
               <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
