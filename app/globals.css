@@ -67,7 +67,16 @@
   
   /* Ajuste do padding e tamanho de elementos para melhor uso do espaço horizontal */
   .p-4 {
-    padding: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  /* Reduzir margens e padding em landscape para aproveitar espaço */
+  .mb-6 {
+    margin-bottom: 0.75rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 0.5rem;
   }
   
   /* Classe específica para container em landscape */
@@ -77,12 +86,62 @@
     max-height: 100vh;
     overflow-y: auto;
   }
+
+  /* Ajustes específicos para o cabeçalho em landscape */
+  .landscape-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .landscape-time, .landscape-btc {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .landscape-title {
+    font-size: 1.25rem;
+  }
+
+  /* Ajustar a área de rolagem para usar todo o espaço disponível em landscape */
+  .h-\[calc\(100vh-200px\)\] {
+    height: calc(100vh - 120px) !important;
+  }
+
+  .h-\[calc\(100vh-250px\)\] {
+    height: calc(100vh - 140px) !important;
+  }
+
+  /* Deixar os cards de token mais compactos em landscape */
+  .card-content {
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  /* Reduzir a altura dos cards e o tamanho dos ícones */
+  .card-content img.rounded-full,
+  .card-content .w-10,
+  .card-content .h-10 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  /* Tornar o layout de cards mais compacto */
+  .card-content .gap-3 {
+    gap: 0.5rem;
+  }
+
+  .card-content .text-lg {
+    font-size: 1rem;
+  }
   
   /* Ajuste o layout para aproveitar melhor o espaço horizontal */
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
+  }
+
+  /* Reduzir o espaçamento entre os cards */
+  .gap-4 {
+    gap: 0.5rem !important;
   }
 }
 

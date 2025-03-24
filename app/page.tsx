@@ -622,18 +622,18 @@ export default function CryptoDashboard() {
 
   return (
     <div className="min-h-screen bg-black text-green-400 p-4 font-mono landscape-container">
-      <header className="mb-6">
+      <header className="mb-6 landscape-header">
         <div className="flex justify-between items-center mb-2">
-          <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg">
+          <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg landscape-time">
             <Clock className="h-5 w-5 text-green-500" />
             <span className="text-green-400 font-bold">
               {isMounted ? currentTime?.toLocaleTimeString() : "--:--:--"}
             </span>
           </div>
 
-          <h1 className="text-2xl font-bold text-center">CryptoNerd Dashboard</h1>
+          <h1 className="text-2xl font-bold text-center landscape-title">CryptoNerd Dashboard</h1>
 
-          <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg">
+          <div className="flex items-center gap-2 bg-gray-900 px-3 py-2 rounded-lg landscape-btc">
             <span className="text-xs text-green-400">
               BTC Dominance:{" "}
               <span className="font-bold">{bitcoinDominance ? `${bitcoinDominance.toFixed(2)}%` : "..."}</span>
@@ -689,7 +689,7 @@ export default function CryptoDashboard() {
                 <div className="grid gap-4">
                   {favorites.map((coin) => (
                     <Card key={coin.id} className="bg-gray-900 border-gray-800 overflow-hidden">
-                      <CardContent className="p-4">
+                      <CardContent className="p-4 card-content">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <div className="relative w-10 h-10">
@@ -780,7 +780,7 @@ export default function CryptoDashboard() {
                   .fill(0)
                   .map((_, i) => (
                     <Card key={i} className="bg-gray-900 border-gray-800">
-                      <CardContent className="p-4">
+                      <CardContent className="p-4 card-content">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <Skeleton className="w-10 h-10 rounded-full" />
@@ -797,7 +797,7 @@ export default function CryptoDashboard() {
               ) : searchResults.length > 0 ? (
                 searchResults.map((coin) => (
                   <Card key={coin.id} className="bg-gray-900 border-gray-800">
-                    <CardContent className="p-4">
+                    <CardContent className="p-4 card-content">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <img
