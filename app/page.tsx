@@ -689,7 +689,7 @@ export default function CryptoDashboard() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-6 w-6 text-green-500 hover:text-green-400"
+                className="h-6 w-6 text-green-500 hover:text-green-400 refresh-btn"
                 onClick={handleRefresh}
                 disabled={isLoading || !isOnline}
               >
@@ -703,20 +703,22 @@ export default function CryptoDashboard() {
       </header>
 
       <Tabs defaultValue="dashboard" className="w-full mt-2">
-        <TabsList className="grid grid-cols-2 w-full">
-          <TabsTrigger 
-            value="dashboard" 
-            className="tab-button"
-          >
-            Dashboard
-          </TabsTrigger>
-          <TabsTrigger 
-            value="favorites" 
-            className="tab-button"
-          >
-            Favorites
-          </TabsTrigger>
-        </TabsList>
+        <div className="relative z-10 mb-6">
+          <TabsList className="w-full h-auto grid grid-cols-2 gap-2 p-2 bg-gray-900 rounded-lg border border-gray-800 tablist-fixed">
+            <TabsTrigger 
+              value="dashboard" 
+              className="tab-button h-auto"
+            >
+              Dashboard
+            </TabsTrigger>
+            <TabsTrigger 
+              value="favorites" 
+              className="tab-button h-auto"
+            >
+              Favorites
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="dashboard" className="mt-4">
           <div className="grid gap-4">
@@ -778,7 +780,7 @@ export default function CryptoDashboard() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="ml-2 text-red-500 hover:text-red-400 hover:bg-gray-800"
+                            className="ml-2 text-red-500 hover:text-red-400 hover:bg-gray-800 notebook-action-btn"
                             onClick={() => removeFromFavorites(coin.id)}
                           >
                             <Trash2 className="h-4 w-4" />
@@ -807,7 +809,7 @@ export default function CryptoDashboard() {
             </div>
             <Button
               onClick={handleSearch}
-              className="bg-green-700 hover:bg-green-600 text-black"
+              className="bg-green-700 hover:bg-green-600 text-black search-btn"
               disabled={isSearching}
             >
               {isSearching ? "Searching..." : "Search"}
@@ -874,7 +876,7 @@ export default function CryptoDashboard() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className={`text-yellow-500 hover:text-yellow-400 hover:bg-gray-800 ${
+                          className={`text-yellow-500 hover:text-yellow-400 hover:bg-gray-800 notebook-action-btn ${
                             favorites.some((fav) => fav.id === coin.id) ? "opacity-50" : ""
                           }`}
                           onClick={() => addToFavorites(coin)}
